@@ -8,3 +8,8 @@ module "test_s3_bucket" {
     enabled = var.enable_versioning
   }
 }
+
+module "app" {
+  source  = "tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws"
+  version = "1.1.0"
+}
