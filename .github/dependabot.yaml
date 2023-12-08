@@ -7,7 +7,8 @@ registries:
 updates:
   - package-ecosystem: "terraform"
     directory: "/"
-    registries:
-      - kg-tfe-registry
+    registries: "*"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "chore"
