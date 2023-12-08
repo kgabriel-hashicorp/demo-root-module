@@ -7,7 +7,6 @@ registries:
 updates:
   - package-ecosystem: "terraform"
     directory: "/"
-    registries: "*"
     schedule:
       interval: "daily"
     commit-message:
