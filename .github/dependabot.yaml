@@ -4,6 +4,7 @@ registries:
     type: terraform-registry
     url: https://tfe.karla-gabriel.sbx.hashidemos.io
     token: ${{secrets.TF_API_TOKEN_DEPENDABOT}}
+
 updates:
   - package-ecosystem: "terraform"
     directory: "/"
@@ -11,3 +12,10 @@ updates:
       - kg-tfe-registry
     schedule:
       interval: "daily"
+
+  - package-ecosystem: "terraform"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore"
