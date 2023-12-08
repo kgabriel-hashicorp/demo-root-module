@@ -1,13 +1,12 @@
 version: 2
-registries:
-  kg-tfe-registry: # Define access for a private registry, https://github.com/github/docs/pull/6808
-    type: terraform-registry
-    url: https://tfe.karla-gabriel.sbx.hashidemos.io
-    token: ${{secrets.TF_API_TOKEN_DEPENDABOT}}
+#registries:
+#  kg-tfe-registry: # Define access for a private registry, https://github.com/github/docs/pull/6808
+#    type: terraform-registry
+#    url: https://tfe.karla-gabriel.sbx.hashidemos.io
+#    token: ${{secrets.TF_API_TOKEN_DEPENDABOT}}
 updates:
   - package-ecosystem: "terraform"
     directory: "/"
-    registries: "*"
     schedule:
       interval: "daily"
     commit-message:
