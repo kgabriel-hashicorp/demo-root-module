@@ -4,7 +4,6 @@ registries:
     type: terraform-registry
     url: https://tfe.karla-gabriel.sbx.hashidemos.io
     token: ${{secrets.TF_API_TOKEN_DEPENDABOT}}
-
 updates:
   - package-ecosystem: "terraform"
     directory: "/"
