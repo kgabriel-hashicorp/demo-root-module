@@ -28,3 +28,9 @@ jobs:
       - name: Check README.md exists
         if: ${{ hashFiles('README.md') != '' }}
         run: echo "README.md exists"
+      - name: Check provider.tf exists
+        if: ${{ hashFiles('tests/provider.tf') != '' }}
+        run: echo "tests/provider.tf exists"
+      - name: Check backend.tf exists
+        if: ${{ hashFiles('backend.tf') != '' }}
+        run: echo "backend.tf exists"
