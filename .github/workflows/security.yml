@@ -1,0 +1,33 @@
+name: Security Checks
+
+on:
+  pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    name: Security Checks
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        env:
+          TF_TOKEN_tfe.karla-gabriel_sbx_hashidemos_io: ${{ secrets.TF_TOKEN }}
+        run: |
+          wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+          sudo apt update && sudo apt install terraform
+          terraform init
+          terraform plan -out tf.plan
+          terraform show -json tf.plan > tfplan.json
+      - name: Setup Checkov
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+        run: |
+          pip install checkov
+          checkov -f tfplan.json --skip-check CKV_AWS_119,CKV_AWS_28,CKV2_AWS_61,CKV_AWS_144,CKV2_AWS_62,CKV2_AWS_16,CKV_AWS_18
