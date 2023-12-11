@@ -32,3 +32,7 @@ plugin "terraform" {
   source  = "github.com/terraform-linters/tflint-ruleset-terraform"
   preset  = "all"
 }
+
+ignore_module = {
+  "kg-dev/app/aws"            = true
+}
