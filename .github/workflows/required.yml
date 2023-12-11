@@ -1,0 +1,20 @@
+name: Check Files
+
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  required:
+    name: Required
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: CODEOWNERS Validator
+        run: |
+          curl -sfL https://raw.githubusercontent.com/mszostok/codeowners-validator/main/install.sh | sh -s v0.7.4
+          codeowners-validator version
