@@ -1,6 +1,7 @@
 name: Check Files
 
-on: workflow_dispatch
+on:
+  pull_request
 
 permissions:
   contents: read
