@@ -27,23 +27,26 @@ and start adding their infrastructure code.
 
 ### Generate Docs
 
-This uses `terraform-docs``, a plugin used to generate terraform documentation from the modules.
+Uses `terraform-docs``, a plugin used to generate terraform documentation from the modules.
 
-#### Defaults
-
+**Defaults**
 * `README.md` will be updated with the documentation of the modules used
-* Automatically commits document changes to README.md(See `Auto Commits` for more details)
-
+* Automatically commits document changes to README.md (See `Auto Commits` for more details)
 
 ### Format Code
 
-This uses the formatter within terraform `terraform -fmt` to rewrite Terraform configuration files following a canonical format and style
+Uses the formatter within terraform `terraform -fmt` to rewrite Terraform configuration files following a canonical format and style
 
-#### Defaults
+**Defaults**
 * Processes files in subdirectories (`-recursive`)
-* Automatically commits format in place
+* Automatically commits format in place (See `Auto Commits` for more details)
 
-### tflint
+### Lint Code
+
+Uses tflint, a linter specifically designed to analyze Terraform code and identify issues, errors and any best practice violation.
+
+**Defaults*
+*  
 ### CODEOwners Validator
 ### checkov
 
