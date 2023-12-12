@@ -1,6 +1,6 @@
 # demo-root-module
 
-## Overview
+### Overview
 This repository contains the standards we recommend having for a root module in Terraform.
 
 * Recommended CI Checks
@@ -14,18 +14,17 @@ This is a root module that will consume the terraform-aws-app module
 * This is the top-level module that calls other modules (child modules)
 * Usually called main.tf, this is where the infrastructure is defined and created
 
-
-## Objectives
+### Objectives
 * Define the standards teams at American Express will follow when creating a root module
 * Include the GitHub Actions that will automate the CI checks ensuring the quality of the module.
 * Demonstrate Release Management process for root modules (consumers) to get the latest from child modules (producers)
 
-## How To Use
-
+### How To Use
 In theory, teams who are starting out in making modules should be able to clone this repository
-and start adding their infrastucture code.
+and start adding their infrastructure code.
 
 ## Worfklows / GitHub Actions
+
 ### Generate Docs
 
 This uses `terraform-docs``, a plugin used to generate terraform documentation from the modules.
@@ -43,6 +42,7 @@ This uses the formatter within terraform `terraform -fmt` to rewrite Terraform c
 #### Defaults
 * Processes files in subdirectories (`-recursive`)
 * Automatically commits format in place
+
 ### tflint
 ### CODEOwners Validator
 ### checkov
@@ -63,10 +63,10 @@ This uses the formatter within terraform `terraform -fmt` to rewrite Terraform c
 
 the `dependabot.yaml` file contains all the configurations you need. 
 
-Required Field  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+| Required Field | Second Header|
+----------------| -------------
+ | Content Cell   | Content Cell|
+ | Content Cell   | Content Cell|
 
 https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependabot.yaml
 
@@ -75,11 +75,11 @@ https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependa
 
 An additional step that is added to the workflow to automatically commit the changes it created.
 
-Required Field  | Corresponding Code | Default Value 
-------------- | -------------   | -----------
-User Name that will commit  | `git config user.name`| GitHub Actions
-Email  | `git config user.email` | actions@github.com
-Commit Message  | `git commit -m` | "fix: Auto format codebase"
+| Required Field             | Corresponding Code | Default Value |
+----------------------------| -------------   | -----------
+ | User Name that will commit | `git config user.name`| GitHub Actions |
+ | Email                      | `git config user.email` | actions@github.com |
+ | Commit Message             | `git commit -m` | "fix: Auto format codebase"|
 
 
 ### Major
