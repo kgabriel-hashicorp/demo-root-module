@@ -4,7 +4,7 @@
 This repository contains the standards we recommend having for a root module in Terraform.
 
 * Recommended CI Checks
-* Release Management Implementations and examples
+* Release Management Implementation and Examples
 * Module Ownership
 
 This is a root module that will consume the terraform-aws-app module
