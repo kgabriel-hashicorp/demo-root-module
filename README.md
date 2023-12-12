@@ -1,6 +1,6 @@
 # demo-root-module
 
-## Overview
+### Overview
 This repository contains the standards we recommend having for a root module in Terraform.
 
 * Recommended CI Checks
@@ -14,38 +14,63 @@ This is a root module that will consume the terraform-aws-app module
 * This is the top-level module that calls other modules (child modules)
 * Usually called main.tf, this is where the infrastructure is defined and created
 
-
-## Objectives
+### Objectives
 * Define the standards teams at American Express will follow when creating a root module
 * Include the GitHub Actions that will automate the CI checks ensuring the quality of the module.
 * Demonstrate Release Management process for root modules (consumers) to get the latest from child modules (producers)
 
-## How To Use
-
+### How To Use
 In theory, teams who are starting out in making modules should be able to clone this repository
-and start adding their infrastucture code.
+and start adding their infrastructure code.
 
 ## Worfklows / GitHub Actions
+
 ### Generate Docs
 
-This uses `terraform-docs``, a plugin used to generate terraform documentation from the modules.
-
-#### Defaults
-
+Uses `terraform-docs``, a plugin used to generate terraform documentation from the modules.
 * `README.md` will be updated with the documentation of the modules used
-* Automatically commits document changes to README.md(See `Auto Commits` for more details)
-
+* Automatically commits document changes to README.md (See `Auto Commits` for more details)
 
 ### Format Code
 
-This uses the formatter within terraform `terraform -fmt` to rewrite Terraform configuration files following a canonical format and style
-
-#### Defaults
+Uses the formatter within terraform `terraform -fmt` to rewrite Terraform configuration files following a canonical format and style
 * Processes files in subdirectories (`-recursive`)
-* Automatically commits format in place
-### tflint
-### CODEOwners Validator
+* Automatically commits format in place (See `Auto Commits` for more details)
+
+### Lint Code
+
+Uses tflint, a linter specifically designed to analyze Terraform code and identify issues, errors and any best practice violation.
+
+* `.tflint.hcl` is the config file that tflint will follow
+
+**Recommended Rules**
+
+***Good to Have***
+
+### CODEOwners Validator and Required Files
+
+* Checks that there's a CODEOWNERS file and there's an owner specified.
+* Checks check that the following files exists
+  * Root Module
+    * README.md
+    * provider.tf
+    * backend.tf
+  * Child Module
+    * README.md
+    * tests/provider.tf
+    * tests/backend.tf
+    
 ### checkov
+
+* checkov is a static code analysis tool used for infrastructure-as-code. 
+* Much like tflint, checkov also follows a set of policies that you can dictate but is geared towards security checks. 
+
+__TODO_: HashiCorp and Amex to collaborate on the policies that would be good to have in the template_
+
+Reference: https://www.checkov.io/5.Policy%20Index/terraform.html
+
+
+
 
 ## Release Management / Getting New Versions
 
@@ -63,10 +88,10 @@ This uses the formatter within terraform `terraform -fmt` to rewrite Terraform c
 
 the `dependabot.yaml` file contains all the configurations you need. 
 
-Required Field  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+| Required Field | Second Header|
+----------------| -------------
+ | Content Cell   | Content Cell|
+ | Content Cell   | Content Cell|
 
 https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependabot.yaml
 
@@ -75,11 +100,11 @@ https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependa
 
 An additional step that is added to the workflow to automatically commit the changes it created.
 
-Required Field  | Corresponding Code | Default Value 
-------------- | -------------   | -----------
-User Name that will commit  | `git config user.name`| GitHub Actions
-Email  | `git config user.email` | actions@github.com
-Commit Message  | `git commit -m` | "fix: Auto format codebase"
+| Required Field             | Corresponding Code | Default Value |
+----------------------------| -------------   | -----------
+ | User Name that will commit | `git config user.name`| GitHub Actions |
+ | Email                      | `git config user.email` | actions@github.com |
+ | Commit Message             | `git commit -m` | "fix: Auto format codebase"|
 
 
 ### Major
