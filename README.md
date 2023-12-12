@@ -47,8 +47,30 @@ Uses tflint, a linter specifically designed to analyze Terraform code and identi
 
 ***Good to Have***
 
-### CODEOwners Validator
+### CODEOwners Validator and Required Files
+
+* Checks that there's a CODEOWNERS file and there's an owner specified.
+* Checks check that the following files exists
+  * Root Module
+    * README.md
+    * provider.tf
+    * backend.tf
+  * Child Module
+    * README.md
+    * tests/provider.tf
+    * tests/backend.tf
+    
 ### checkov
+
+* checkov is a static code analysis tool used for infrastructure-as-code. 
+* Much like tflint, checkov also follows a set of policies that you can dictate but is geared towards security checks. 
+
+__TODO_: HashiCorp and Amex to collaborate on the policies that would be good to have in the template_
+
+Reference: https://www.checkov.io/5.Policy%20Index/terraform.html
+
+
+
 
 ## Release Management / Getting New Versions
 
