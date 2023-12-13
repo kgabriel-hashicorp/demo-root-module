@@ -30,7 +30,11 @@ and start adding their infrastructure code.
 Uses `terraform-docs`, a plugin used to generate terraform documentation from the modules.
 * `README.md` will be updated with the documentation of the modules used
 * Automatically commits document changes to README.md (See `Auto Commits` for more details)
-* Generated documentation will be added here before code block `<!-- BEGIN_TF_DOCS -->` and after `<!-- END_TF_DOCS -->`
+* Generated documentation will be added here before code block 
+```
+<!-- BEGIN_TF_DOCS -- >`
+<!-- END_TF_DOCS -- >
+```
 
 ### Format Code
 
