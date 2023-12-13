@@ -80,17 +80,27 @@ Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/ma
     * README.md
     * provider.tf
     * backend.tf
-  * Child Module
-    * README.md
-    * tests/provider.tf
-    * tests/backend.tf
-    
+
 ### checkov
 
 * checkov is a static code analysis tool used for infrastructure-as-code. 
 * Much like tflint, checkov also follows a set of policies that you can dictate but is geared towards security checks. 
 
 __TODO_: HashiCorp and Amex to collaborate on the policies that would be good to have in the template_
+
+* To pull modules on a private registry the following must be set:
+  * Enviornment Variables
+  ```
+  env:
+    TF_HOST_NAME: tfe.karla-gabriel.sbx.hashidemos.io
+    TF_REGISTRY_TOKEN: ${{ secrets.TF_ORG_TOKEN }}
+
+  ```
+  * Flag
+  ```
+  with:
+      download_external_modules: true
+  ```
 
 Reference: https://www.checkov.io/5.Policy%20Index/terraform.html
 
