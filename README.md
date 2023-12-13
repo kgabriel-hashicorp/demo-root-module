@@ -1,30 +1,28 @@
 # demo-root-module
+
 ### What is a root module?
 * The terraform configuration that is actually applied and will have the terraform state.
+* `.tf` files in your working directory form the `root module`
 * This is the top-level module that calls other modules (child modules)
-* Usually called main.tf, this is where the infrastructure is defined and created
 
-### Objectives
-* Define the standards teams at American Express will follow when creating a root module
-* Include the GitHub Actions that will automate the CI checks ensuring the quality of the module.
-* Demonstrate Release Management process for root modules (consumers) to get the latest from child modules (producers)
+### Structure of a Root Module
 
-### How To Use
-In theory, teams who are starting out in making modules should be able to clone this repository
-and start adding their infrastructure code.
+Terraform Configuration Files
 
-### Components of Root Module
+**Main Configuration file (`main.tf`)**
+* Defines the resources and configurations the module will create
+* Primary entry point of your module
+* It is recommended to name this file more intuitively (ie ec2.tf or s3.tf) depending on what's being deployed
 
-main.tf
-variables.tf
-outputs.tf
-provider.tf
-backend.tf
+**Variable Definitions (`variables.tf`)**
+* Where to declare input variables for the module
+* Allows you to customize your Terraform module without altering the source code
 
-### Module Ownership
+**Output Definitions (`outputs.tf`)**
+* Ouputs are information that's extracted from your infrasture after it's created (i.e. ARN)
+* This file is used to define outputs of your root module
+* The outputs you exposed can be used in other parts of your Terraform configuration.
 
-It is mandatory that there's a CODEOWNERS file and there's a valid user or teams GitHub account specified.
-Apart from PR approvals, this is also ensures that the module has an owner.
 
 ## Release Management / Getting New Versions
 
