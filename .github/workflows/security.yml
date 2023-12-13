@@ -16,6 +16,7 @@ jobs:
     - name: Checkov
       uses: bridgecrewio/checkov-action@v12
       env:
+        TF_HOST_NAME: tfe.karla-gabriel.sbx.hashidemos.io
         TF_REGISTRY_TOKEN: ${{ secrets.TF_USER_TOKEN }}
       with:
         output_format: cli
