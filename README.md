@@ -7,7 +7,7 @@
 
 ### Structure of a Root Module
 
-**Resources Configuration file (`main.tf`)**
+**Resources Configuration file**
 * Defines the resources and configurations the module will create
 * Primary entry point of your module
 * For simple modules `main.tf` is sometimes used. 
