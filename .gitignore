@@ -32,11 +32,3 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-.idea/demo-root-module.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
-.idea/vcs.xml
-tfplan.json
-.gitignore
-.terraform.lock.hcl
