@@ -113,7 +113,6 @@ https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependa
 ### Configuration
 
 
-
 ### Auto Commits
 
 An additional step that is added to the workflow to automatically commit the changes it created.
@@ -123,3 +122,6 @@ An additional step that is added to the workflow to automatically commit the cha
  | User Name that will commit | `git config user.name`| GitHub Actions |
  | Email                      | `git config user.email` | actions@github.com |
  | Commit Message             | `git commit -m` | "fix: Auto format codebase"|
+
+<!-- BEGIN_TF_DOCS -->
+<!-- END_TF_DOCS -->

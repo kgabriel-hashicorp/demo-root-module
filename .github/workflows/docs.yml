@@ -29,6 +29,9 @@ jobs:
         mv terraform-docs /usr/local/bin/terraform-docs
     - name: Generate Docs
       run: |
+        terraform-docs markdown . --output-file README.md
+    - name: Auto Commit Doc Changes
+      run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add .
