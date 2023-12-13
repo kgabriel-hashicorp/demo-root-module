@@ -7,8 +7,6 @@
 
 ### Structure of a Root Module
 
-Terraform Configuration Files
-
 **Main Configuration file (`main.tf`)**
 * Defines the resources and configurations the module will create
 * Primary entry point of your module
@@ -23,11 +21,44 @@ Terraform Configuration Files
 * This file is used to define outputs of your root module
 * The outputs you exposed can be used in other parts of your Terraform configuration.
 
+**Variable Definitions (`.tvars`)**
+* This file allows you to specify values for the variables declared in `variables.tf`
+* For testing locally, you can create environment specific .tvars and run them with `terraform plan`
+  * eg: using dev.tvfars (with dev values) `terraform plan -var-file=dev.tfvars`
+
+**Backend Configuration (`backend.tf`)**
+* File used to configure the backend where Terraform stores its state
+* Terraform uses the state file to track the current state of your infrastructure.
+* By default, if you don't specify a backend.tf file it will use `local`
+
+For Amex:
+```
+  terraform {
+    backend "remote" {
+      hostname = "tfe.aexp.com" 
+      organization = "aexp"
+    }
+
+    workspaces {
+      name = "${corresponding_workspace}"
+    }
+  }
+```
+
+**Provider Configuration**
+* 
+
+
+## Module Ownership##
+It is required that there's a CODEOWNERS file that has a valid GitHub Username / Team
+Not only is CODEOWNERS used for PR approvals it is also used to track the owners/maintainers of the module.
+
+_Note: Do we want to make sure it's a team? We can add checks_
 
 ## Release Management / Getting New Versions
 
 * This module relies on dependabot to manage the module dependencies.
-* A PULL REQUEST will automatically be raised if there are new version of the child modules from either the public or private Terraform Registry.
+* A PULL REQUEST will automatically be raised if there are new versions of the child modules from either the public or private Terraform Registry.
 * The PULL REQUEST will have to approved by the CODEOWNERS.
 * More details can be found under ` .github/workflows/README.md `
 
