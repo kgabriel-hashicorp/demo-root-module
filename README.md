@@ -7,10 +7,11 @@
 
 ### Structure of a Root Module
 
-**Main Configuration file (`main.tf`)**
+**Resources Configuration file**
 * Defines the resources and configurations the module will create
 * Primary entry point of your module
-* It is recommended to name this file more intuitively (ie ec2.tf or s3.tf) depending on what's being deployed
+* For simple modules `main.tf` is sometimes used. 
+* It is recommended to name this file more intuitively (ie `ec2.tf` or `s3.tf`) depending on what's being deployed
 
 **Variable Definitions (`variables.tf`)**
 * Where to declare input variables for the module
@@ -45,11 +46,11 @@ For Amex:
   }
 ```
 
-**Provider Configuration**
-* 
+**Provider Configuration (`provider.tf`) **
+* File used to configure the provider/s for your infrastructure.
+* A provider is responsible for interacting with the API of your infrastructure source like AWS, GCP, Azure etc.
 
-
-## Module Ownership##
+## Module Ownership #
 It is required that there's a CODEOWNERS file that has a valid GitHub Username / Team
 Not only is CODEOWNERS used for PR approvals it is also used to track the owners/maintainers of the module.
 
