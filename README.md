@@ -30,6 +30,12 @@ and start adding their infrastructure code.
 Uses `terraform-docs`, a plugin used to generate terraform documentation from the modules.
 * `README.md` will be updated with the documentation of the modules used
 * Automatically commits document changes to README.md (See `Auto Commits` for more details)
+* Generated documentation will be added here
+```
+<!-- BEGIN_TF_DOCS -->
+{{ .Content }}
+<!-- END_TF_DOCS -->
+```
 
 ### Format Code
 
@@ -138,3 +144,6 @@ An additional step that is added to the workflow to automatically commit the cha
  | User Name that will commit | `git config user.name`| GitHub Actions |
  | Email                      | `git config user.email` | actions@github.com |
  | Commit Message             | `git commit -m` | "fix: Auto format codebase"|
+
+<!-- BEGIN_TF_DOCS -->
+<!-- END_TF_DOCS -->
