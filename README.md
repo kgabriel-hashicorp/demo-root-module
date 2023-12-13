@@ -27,7 +27,7 @@ and start adding their infrastructure code.
 
 ### Generate Docs
 
-Uses `terraform-docs``, a plugin used to generate terraform documentation from the modules.
+Uses `terraform-docs`, a plugin used to generate terraform documentation from the modules.
 * `README.md` will be updated with the documentation of the modules used
 * Automatically commits document changes to README.md (See `Auto Commits` for more details)
 
@@ -41,11 +41,20 @@ Uses the formatter within terraform `terraform -fmt` to rewrite Terraform config
 
 Uses tflint, a linter specifically designed to analyze Terraform code and identify issues, errors and any best practice violation.
 
+* `terraform init` will need to run before tflint
+* Will run in each directory recursively (`--recursive`)
+* Output will be `--format=compact` (other options are default|json|checkstyle|junit|compact|sarif )
 * `.tflint.hcl` is the config file that tflint will follow
-
+  
 **Recommended Rules**
 
-***Good to Have***
+| Rule | Description|
+----------------| -------------
+ | terraform_module_version  | Checks that Terraform modules sourced from a registry specify a version|
+ | terraform_naming_convention   | Enforces naming conventions for resources, data sources, etc|
+| terraform_module_pinned_source   | Disallow specifying a git or mercurial repository as a module source without pinning to a version|
+
+**Good to Have**
 
 ### CODEOwners Validator and Required Files
 
@@ -70,8 +79,6 @@ __TODO_: HashiCorp and Amex to collaborate on the policies that would be good to
 Reference: https://www.checkov.io/5.Policy%20Index/terraform.html
 
 
-
-
 ## Release Management / Getting New Versions
 
 * This module relies on dependabot to manage the module dependencies.
@@ -82,18 +89,19 @@ Reference: https://www.checkov.io/5.Policy%20Index/terraform.html
 
 * It is a free GitHub Featue that automatically updates dependencies.
 * It ensures that your repository automatically keeps up with the latest releases of packages and applications it depends on
-* This needs to be enabled on your o
 
 ### How does it work?
 
 the `dependabot.yaml` file contains all the configurations you need. 
 
-| Required Field | Second Header|
-----------------| -------------
- | Content Cell   | Content Cell|
- | Content Cell   | Content Cell|
+TODO: AMEX has a different way to using dependabot we will need to port these changes
 
 https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependabot.yaml
+
+
+### Configuration
+*
+
 
 
 ### Auto Commits
@@ -107,6 +115,3 @@ An additional step that is added to the workflow to automatically commit the cha
  | Commit Message             | `git commit -m` | "fix: Auto format codebase"|
 
 
-### Major
-### Minor
-### Patch
