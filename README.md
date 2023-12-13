@@ -46,7 +46,7 @@ Uses tflint, a linter specifically designed to analyze Terraform code and identi
 * Output will be `--format=compact` (other options are default|json|checkstyle|junit|compact|sarif )
 * `.tflint.hcl` is the config file that tflint will follow
 
-**Bundled Plugin**
+**Terraform Plugin**
 
 For this implementation we are using a bundled plugin so that we can tailor what we need to run. Particularly the `source` and the `preset`
 ```
