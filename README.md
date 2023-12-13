@@ -76,15 +76,10 @@ Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/ma
 
 * Checks that there's a CODEOWNERS file and there's an owner specified.
 * Checks check that the following files exists
-  * Root Module
-    * README.md
-    * provider.tf
-    * backend.tf
-  * Child Module
-    * README.md
-    * tests/provider.tf
-    * tests/backend.tf
-    
+  * README.md
+  * provider.tf
+  * backend.tf
+  
 ### checkov
 
 * checkov is a static code analysis tool used for infrastructure-as-code. 
