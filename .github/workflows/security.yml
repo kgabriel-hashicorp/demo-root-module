@@ -16,7 +16,7 @@ jobs:
     - name: Checkov
       uses: bridgecrewio/checkov-action@v12
       env:
-        TF_REGISTRY_TOKEN: ${{ secrets.TF_TEAM_TOKEN }}
+        TF_REGISTRY_TOKEN: ${{ secrets.TF_USER_TOKEN }}
       with:
         output_format: cli
         output_file_path: console
