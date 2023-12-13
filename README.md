@@ -46,7 +46,7 @@ For Amex:
   }
 ```
 
-**Provider Configuration (`provider.tf`) **
+**Provider Configuration (`provider.tf`)**
 * File used to configure the provider/s for your infrastructure.
 * A provider is responsible for interacting with the API of your infrastructure source like AWS, GCP, Azure etc.
 
