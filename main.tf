@@ -9,7 +9,8 @@ module "test_s3_bucket" {
   }
 }
 
-module "app" {
-  source  = "tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws"
-  version = "3.0.1"
-}
+# module "app" {
+#   source  = "tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws"
+#   version = "3.0.1"
+# }
+
