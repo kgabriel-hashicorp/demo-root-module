@@ -39,14 +39,30 @@ Uses the formatter within terraform `terraform -fmt` to rewrite Terraform config
 
 ### Lint Code
 
-Uses tflint, a linter specifically designed to analyze Terraform code and identify issues, errors and any best practice violation.
+Uses tflint, a linter specifically designed to analyze Terraform code and identify issues, errors and any best practice violations.
 
 * `terraform init` will need to run before tflint
 * Will run in each directory recursively (`--recursive`)
 * Output will be `--format=compact` (other options are default|json|checkstyle|junit|compact|sarif )
 * `.tflint.hcl` is the config file that tflint will follow
+
+**Bundled Plugin**
+
+For this implementation we are using a bundled plugin so that we can tailor what we need to run. Particularly the `source` and the `preset`
+```
+plugin "terraform" {
+  enabled = true
+  version = "0.5.0"
+  source  = "github.com/terraform-linters/tflint-ruleset-terraform"
+  preset  = "all"
+}
+```
   
 **Recommended Rules**
+
+We recommend using the `preset=all` setting however this will need to be further checked as it might fail on Amex modules (particularly the decprecated checks)
+
+For now we've enabled the following:
 
 | Rule | Description|
 ----------------| -------------
@@ -54,9 +70,9 @@ Uses tflint, a linter specifically designed to analyze Terraform code and identi
  | terraform_naming_convention   | Enforces naming conventions for resources, data sources, etc|
 | terraform_module_pinned_source   | Disallow specifying a git or mercurial repository as a module source without pinning to a version|
 
-**Good to Have**
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/main/docs/rules/README.md 
 
-### CODEOwners Validator and Required Files
+### CODEOWNERS Validator and Required Files
 
 * Checks that there's a CODEOWNERS file and there's an owner specified.
 * Checks check that the following files exists
@@ -100,7 +116,6 @@ https://github.com/kgabriel-hashicorp/demo-root-module/blob/main/.github/dependa
 
 
 ### Configuration
-*
 
 
 
@@ -113,5 +128,3 @@ An additional step that is added to the workflow to automatically commit the cha
  | User Name that will commit | `git config user.name`| GitHub Actions |
  | Email                      | `git config user.email` | actions@github.com |
  | Commit Message             | `git commit -m` | "fix: Auto format codebase"|
-
-
