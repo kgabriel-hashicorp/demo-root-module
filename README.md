@@ -1,15 +1,4 @@
 # demo-root-module
-
-### Overview
-This repository contains the standards we recommend having for a root module in Terraform.
-
-* Proper Terraform configuration files and formats
-* Recommended CI Checks
-* Release Management Implementation and Examples
-* Module Ownership
-
-This is a root module that will consume the terraform-aws-app module
-
 ### What is a root module?
 * The terraform configuration that is actually applied and will have the terraform state.
 * This is the top-level module that calls other modules (child modules)
@@ -23,6 +12,19 @@ This is a root module that will consume the terraform-aws-app module
 ### How To Use
 In theory, teams who are starting out in making modules should be able to clone this repository
 and start adding their infrastructure code.
+
+### Components of Root Module
+
+main.tf
+variables.tf
+outputs.tf
+provider.tf
+backend.tf
+
+### Module Ownership
+
+It is mandatory that there's a CODEOWNERS file and there's a valid user or teams GitHub account specified.
+Apart from PR approvals, this is also ensures that the module has an owner.
 
 ## Release Management / Getting New Versions
 
