@@ -11,5 +11,5 @@ module "test_s3_bucket" {
 
 module "app" {
   source  = "tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws"
-  version = "3.1.0"
+  version = "4.0.1"
 }
