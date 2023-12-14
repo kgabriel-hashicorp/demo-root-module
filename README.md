@@ -63,12 +63,3 @@ Link to the [ModuleStandardizationPage]
 CODEOWNERS file contain the maintainers of this repository
 This can also include a link to a [Slack] Channel 
 
-## Clone Me
-
-[**Create a repository using this template →**][template.generate]
-
-<!-- resources -->
-[template.generate]: https://github.com/kgabriel-hashicorp/demo-root-module/generate
-
-
-[Conventional Commits]: (https://www.conventionalcommits.org/en/v1.0.0/)
