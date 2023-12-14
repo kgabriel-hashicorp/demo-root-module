@@ -49,13 +49,13 @@ No resources.
 No outputs.
 <!-- END_TF_DOCS -->
 
-# Contributing
+## Contributing
 
 * Commit messages and PR titles must follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
  
  * Pull requests will need to be reviewed by the CODEOWNERS.
 
- # Maintainers
+## Maintainers
 
 CODEOWNERS file contain the maintainers of this repository
 This can also include a link to a Slack Channel 
