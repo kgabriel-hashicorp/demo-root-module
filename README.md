@@ -21,7 +21,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_app"></a> [app](#module\_app) | tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws | 5.1.1 |
+| <a name="module_app"></a> [app](#module\_app) | tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws | 6.0.0 |
 | <a name="module_test_s3_bucket"></a> [test\_s3\_bucket](#module\_test\_s3\_bucket) | terraform-aws-modules/s3-bucket/aws | 3.15.1 |
 
 ## Resources
