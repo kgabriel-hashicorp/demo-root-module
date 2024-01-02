@@ -10,5 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region
+  region = var.regions
 }
+
+data "aws_region" "current" {}

@@ -15,7 +15,9 @@ This terraform module will create an S3 Bucket.
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
 
 ## Modules
 
@@ -26,7 +28,9 @@ No providers.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
@@ -34,16 +38,23 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | S3 Bucket Name | `string` | `"kg-test-s3-bucket-for-fun"` | no |
 | <a name="input_enable_versioning"></a> [enable\_versioning](#input\_enable\_versioning) | Enable S3 Versioning | `bool` | `true` | no |
-| <a name="input_region"></a> [region](#input\_region) | AWS region | `string` | `"us-east-1"` | no |
+| <a name="input_regions"></a> [regions](#input\_regions) | AWS region | `string` | `"us-east-1"` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_region"></a> [region](#output\_region) | The AWS region the S3 bucket is deployed to. |
 <!-- END_TF_DOCS -->
 
 ## Reference
 
 Link to the [ModuleStandardizationPage]
+
+## CI Checks
+
+You will need to have GitHub Actions available for this repository.
+TODO: For amex template make sure that the workflows have the correct runs-on value
 
 ## Module Dependencies
 

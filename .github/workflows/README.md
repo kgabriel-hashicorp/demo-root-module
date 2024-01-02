@@ -11,6 +11,8 @@ Uses `terraform-docs`, a plugin used to generate terraform documentation from th
 <!-- END_TF_DOCS -- >
 ```
 
+Note: It requires some resources supported by the provider, even with a count of 0 for providers to be added in the documentation.
+
 ### Format Code
 
 Uses the formatter within terraform `terraform -fmt` to rewrite Terraform configuration files following a canonical format and style
@@ -60,6 +62,8 @@ Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/ma
     * README.md
     * provider.tf
     * backend.tf
+    * .amex/buildblock.yaml
+      TODO: Potentially integrate the Buildblocks CLI to validate
 
 ### checkov
 
