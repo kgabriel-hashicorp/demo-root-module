@@ -25,15 +25,6 @@ jobs:
           curl -sfL https://raw.githubusercontent.com/mszostok/codeowners-validator/main/install.sh | sh -s v0.7.4
           mv ./bin/codeowners-validator /usr/local/bin/codeowners-validator
           codeowners-validator
-      # - name: Check README.md exists
-      #   if: ${{ hashFiles('README.md') != '' }}
-      #   run: echo "README.md exists"
-      # - name: Check provider.tf exists
-      #   if: ${{ hashFiles('tests/provider.tf') != '' }}
-      #   run: echo "tests/provider.tf exists"
-      # - name: Check backend.tf exists
-      #   if: ${{ hashFiles('backend.tf') != '' }}
-      #   run: echo "backend.tf exists"
       - name: Check Required Files Exist
         shell: bash
         run: |

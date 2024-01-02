@@ -60,6 +60,8 @@ Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/ma
     * README.md
     * provider.tf
     * backend.tf
+    * .amex/buildblock.yaml
+      TODO: Potentially integrate the Buildblocks CLI to validate
 
 ### checkov
 
