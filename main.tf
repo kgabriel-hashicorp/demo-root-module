@@ -13,3 +13,8 @@ module "app" {
   source  = "tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws"
   version = "6.0.0"
 }
+
+locals {
+    account_id  = data.aws_caller_identity.current.account_id
+    region      = data.aws_region.current.name
+}

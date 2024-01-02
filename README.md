@@ -49,6 +49,11 @@ No outputs.
 
 Link to the [ModuleStandardizationPage]
 
+## CI Checks
+
+You will need to have GitHub Actions available for this repository.
+TODO: For amex template make sure that the workflows have the correct runs-on value
+
 ## Module Dependencies
 
 * This module relies on dependabot to manage the module dependencies.
