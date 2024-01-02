@@ -25,23 +25,25 @@ jobs:
           curl -sfL https://raw.githubusercontent.com/mszostok/codeowners-validator/main/install.sh | sh -s v0.7.4
           mv ./bin/codeowners-validator /usr/local/bin/codeowners-validator
           codeowners-validator
-      - name: Check README.md exists
-        if: ${{ hashFiles('README.md') != '' }}
-        run: echo "README.md exists"
-      - name: Check provider.tf exists
-        if: ${{ hashFiles('tests/provider.tf') != '' }}
-        run: echo "tests/provider.tf exists"
-      - name: Check backend.tf exists
-        if: ${{ hashFiles('backend.tf') != '' }}
-        run: echo "backend.tf exists"
-      - name: Check buildblocks.yaml exists
-        env:
-          FILE: .amex/buildblocks.yaml
+      # - name: Check README.md exists
+      #   if: ${{ hashFiles('README.md') != '' }}
+      #   run: echo "README.md exists"
+      # - name: Check provider.tf exists
+      #   if: ${{ hashFiles('tests/provider.tf') != '' }}
+      #   run: echo "tests/provider.tf exists"
+      # - name: Check backend.tf exists
+      #   if: ${{ hashFiles('backend.tf') != '' }}
+      #   run: echo "backend.tf exists"
+      - name: Check Required Files Exist
         shell: bash
         run: |
-          if [[ -f $FILE ]]; then
-            echo "$FILE exists!"
-          else
-            echo "$FILE does not exist!"
-            exit 1
-          fi
+            all_exist () {  
+              local filename
+              for filename; do
+                  test -f "$filename" && continue
+                  echo "$0: $filename does not exist - aborting" >&2
+                  return 1
+              done
+              return 0
+            }
+            all_exist README.md provider.tf backend.tf .amex/buildblocks.yaml
