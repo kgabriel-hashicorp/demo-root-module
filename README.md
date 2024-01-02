@@ -42,7 +42,9 @@ This terraform module will create an S3 Bucket.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_region"></a> [region](#output\_region) | The AWS region the S3 bucket is deployed to. |
 <!-- END_TF_DOCS -->
 
 ## Reference
