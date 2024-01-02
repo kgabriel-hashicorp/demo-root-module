@@ -38,6 +38,7 @@ This terraform module will create an S3 Bucket.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | S3 Bucket Name | `string` | `"kg-test-s3-bucket-for-fun"` | no |
 | <a name="input_enable_versioning"></a> [enable\_versioning](#input\_enable\_versioning) | Enable S3 Versioning | `bool` | `true` | no |
+| <a name="input_regions"></a> [regions](#input\_regions) | AWS region | `string` | `"us-east-1"` | no |
 
 ## Outputs
 
