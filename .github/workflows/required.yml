@@ -40,7 +40,7 @@ jobs:
             all_exist () {  
               local filename
               for filename; do
-                  test -f "$filename" echo "$filename exists" && continue
+                  test -f "$filename" && echo "$filename exists" && continue
                   echo "$0: $filename does not exist - aborting" >&2
                   return 1
               done
