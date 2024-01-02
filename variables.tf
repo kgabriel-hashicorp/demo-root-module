@@ -1,9 +1,3 @@
-variable "region" {
-  description = "AWS region"
-  default     = "us-east-1"
-  type        = string
-}
-
 variable "bucket_name" {
   description = "S3 Bucket Name"
   default     = "kg-test-s3-bucket-for-fun"

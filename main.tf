@@ -12,9 +12,9 @@ module "test_s3_bucket" {
 module "app" {
   source  = "tfe.karla-gabriel.sbx.hashidemos.io/kg-dev/app/aws"
   version = "6.0.0"
+  region  = local.region
 }
 
 locals {
-    account_id  = data.aws_caller_identity.current.account_id
     region      = data.aws_region.current.name
 }
